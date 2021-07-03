@@ -7,6 +7,8 @@ project 1 - A Random Quote Generator
 // Check the "Project Resources" section of the project instructions
 // Reach out in your Slack community - https://treehouse-fsjs-102.slack.com/app_redirect?channel=chit-chat
 
+/* This is a random quote generator coded in javascript. First we create an array with quote objects */
+
 /***
  * `quotes` array
  ***/
@@ -56,16 +58,17 @@ const quotes = [
 ];
 
 /***
- * `getRandomQuote` function
+ * `getRandomQuote` function - returns a random number between zero and the last index in the `quotes` array
+ * and uses it as index to pick a random quote
  ***/
 
 function getRandomQuote() {
-  // document.getElementById("quote-box").innerHTML = (quotes[Math.floor(Math.random() * quotes.length)]).quote;
   quote = quotes[Math.floor(Math.random() * quotes.length)];
 }
 
 /***
- * `printQuote` function
+ * `printQuote` function - Creates a variable that initiates a HTML string that will display
+ * quotes properties such as quote and source - citation and year will be displayed when avaiblable
  ***/
 
 function printQuote() {
@@ -83,6 +86,8 @@ function printQuote() {
     finalString = finalString + `<span class="year">${quote.year}</span>`;
   }
 
+  document.querySelector("body").style.background =
+    "#" + Math.floor(Math.random() * 1000);
   document.getElementById("quote-box").innerHTML = finalString + "</p>";
 }
 
