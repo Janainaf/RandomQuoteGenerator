@@ -12,24 +12,34 @@ project 1 - A Random Quote Generator
 ***/
 const quotes = [
 
- { "quote": "All is worth it",
- "author": "Fernando Pessoa"  ,
+ { "quote": "Literature is the most agreeable way of ignoring life",
+ "source": "Fernando Pessoa"  ,
+ "citation": "The Book of Disquiet",
+ "year": "1980"
  }, 
 
- { "quote": "2",
- "author": "2",
+ { "quote": "My past is everything I failed to be",
+ "source": "Fernando Pessoa",
+ "citation": "The Book of Disquiet",
+ "year": "1980"
  },
 
- { "quote": "3",
- "author": "3",
+ { "quote": "I'd woken up early, and I took a long time getting ready to exist",
+ "source": "Fernando Pessoa",
+ "citation": "The Book of Disquiet",
+ "year": "1980"
  },
 
- { "quote": "4",
- "author": "4",
+ { "quote": "I am nothing. I'll never be anything. I couldn't want to be something. Apart from that, I have in me all the dreams in the world",
+ "source": "Fernando Pessoa",
+ "citation": "The Book of Disquiet",
+ "year": "1980"
  },
 
- { "quote": "5",
- "author": "5",
+ { "quote": "To be great, be whole; Exclude nothing, exaggerate nothing that is not you. Be whole in everything. Put all you are Into the smallest thing you do. So, in each lake, the moon shines with splendor Because it blooms up above" ,
+ "source": "Fernando Pessoa",
+ "citation": "The Book of Disquiet",
+ "year": "1980"
  } 
 
 ]
@@ -39,17 +49,23 @@ const quotes = [
 ***/
 
 function getRandomQuote () {
-  console.log(quotes[Math.floor(Math.random() * quotes.length)]);
-}
 
-getRandomQuote ()
+  // document.getElementById("quote-box").innerHTML = (quotes[Math.floor(Math.random() * quotes.length)]).quote;
+  quote = quotes[Math.floor(Math.random() * quotes.length)];
+  }
+
 /***
  * `printQuote` function
 ***/
 
 function printQuote () {
 
+  getRandomQuote();
+  var phrase =  `<p class="quote"> ${quote.quote} </p>`
+  var source =  `<p class="source"> ${quote.source} </p>`
 
+  finalString = phrase + source
+  document.getElementById('quote-box').innerHTML = finalString; 
 }
 
 /***
