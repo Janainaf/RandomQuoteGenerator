@@ -67,10 +67,10 @@ function printQuote () {
   
   if (quote.citation) { 
     finalString =  finalString +`<span class="citation"> ${quote.citation}</span>`
+  }
     if (quote.year) {
-      finalString =  finalString  + `<span class="year">${quote.year}</span>`}
-   }
- 
+  finalString =  finalString  + `<span class="year">${quote.year}</span>`
+}
   
   document.getElementById('quote-box').innerHTML = finalString +'</p>'; 
 }
