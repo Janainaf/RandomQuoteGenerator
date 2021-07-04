@@ -92,7 +92,7 @@ function printQuote() {
 
   document.getElementById("quote-box").innerHTML = finalString + "</p>";
 
-  // This line of code sets a random color for the html body where time printQuote is called
+  // This line of code sets a random color for the html body every time printQuote is called
   document.querySelector("body").style.background =
     "#" + Math.floor(Math.random() * 1000);
 }
