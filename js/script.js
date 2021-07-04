@@ -38,6 +38,7 @@ const quotes = [
     source: "Fernando Pessoa",
     citation: "The Book of Disquiet",
     year: "1982",
+    tag: "Existencialism",
   },
 
   {
@@ -58,8 +59,7 @@ const quotes = [
 ];
 
 /***
- * `getRandomQuote` function - returns a random number between zero and the last index in the `quotes` array
- * and uses it as index to pick a random quote
+ * `getRandomQuote` function - returns a random number and uses it as index to pick a random quote
  ***/
 
 function getRandomQuote() {
@@ -67,8 +67,9 @@ function getRandomQuote() {
 }
 
 /***
- * `printQuote` function - Creates a variable that initiates a HTML string that will display
- * quotes properties such as quote and source - citation and year will be displayed when avaiblable
+ * `printQuote` function - calls the randomquote function and uses its result (the random quote) to create a variable
+ * that contains a string with each particularly quote properties (quote, source and when available citation, year and tag)
+ *
  ***/
 
 function printQuote() {
@@ -85,11 +86,20 @@ function printQuote() {
   if (quote.year) {
     finalString = finalString + `<span class="year">${quote.year}</span>`;
   }
+  if (quote.tag) {
+    finalString = finalString + `<p class="source"> Tag: ${quote.tag}</p>`;
+  }
 
+  document.getElementById("quote-box").innerHTML = finalString + "</p>";
+
+  // This line of code sets a random color for the html body where time printQuote is called
   document.querySelector("body").style.background =
     "#" + Math.floor(Math.random() * 1000);
-  document.getElementById("quote-box").innerHTML = finalString + "</p>";
 }
+
+// This line of code calls the function printQuote every 10 seconds
+
+setInterval(printQuote, 10000);
 
 /***
  * click event listener for the print quote button
